@@ -1,4 +1,5 @@
 set nobackup
+syntax on
 
 " An example for a vimrc file.
 "
