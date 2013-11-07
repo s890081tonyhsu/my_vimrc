@@ -8,7 +8,7 @@ behave mswin
 
 set diffexpr=MyDiff()
 function MyDiff()
- let opt = '-a --binary '
+  let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
   if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
   let arg1 = v:fname_in
@@ -34,10 +34,7 @@ endfunction
 set nu
 :highlight LineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=DarkGray
 
-set nocompatible               " be iMproved
- filetype off                   " required!
-
- set rtp=$VIMRUNTIME/bundle/vundle/
+ set rtp+=$VIMRUNTIME/bundle/vundle/
  call vundle#rc()  
 
  " let Vundle manage Vundle
