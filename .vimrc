@@ -101,7 +101,7 @@ endif
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -128,9 +128,10 @@ Bundle 'gmarik/vundle'
 
 " git repos on your local machine (ie. when working on your own plugin)
 
-" my Bundle plugins
+ " my Bundle plugins
  Bundle 'mattn/emmet-vim'
-" end of my bundle plugins
+ Bundle 'cakebaker/scss-syntax.vim' 
+ " end of my bundle plugins
 
  filetype plugin indent on     " required!
  "
