@@ -77,3 +77,9 @@ set nu
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
+ 
+ set t_Co=256
+ set number
+ highlight LineNr term=bold	cterm=NONE ctermfg=Yellow ctermbg=DarkGray	gui=none guifg=Yellow	guibg=DarkGray
+ highlight cursorLine		cterm=NONE ctermbg=black  ctermbg=black 	gui=none guibg=black	guifg=black
+ set cursorline
