@@ -31,6 +31,7 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+
 set nu
 :highlight LineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=DarkGray
 
@@ -60,7 +61,7 @@ set nu
 
  " This is myselt Bundle plugins
  Bundle 'mattn/emmet-vim'
-
+ Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 
 
@@ -81,5 +82,28 @@ set nu
  set t_Co=256
  set number
  highlight LineNr term=bold	cterm=NONE ctermfg=Yellow ctermbg=DarkGray	gui=none guifg=Yellow	guibg=DarkGray
- highlight cursorLine		cterm=NONE ctermbg=black  ctermbg=black 	gui=none guibg=black	guifg=black
- set cursorline
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+
+set grepprg=grep/ -nH/ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+
+let g:tex_flavor='latex'
