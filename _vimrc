@@ -1,10 +1,11 @@
 set nocompatible
-set backupdir=%TMP%
+set backupdir=$VIMRUNTIME/backupfile/
 set nobackup
 syntax on
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
+set ts=4
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -34,6 +35,16 @@ endfunction
 
 set nu
 :highlight LineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=DarkGray
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h14:cANSI
+  endif
+endif
 
  set rtp+=$VIMRUNTIME/bundle/vundle/
  call vundle#rc()  
@@ -96,7 +107,7 @@ set shellslash
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
 
-set grepprg=grep/ -nH/ $*
+" set grepprg=grep/ -nH/ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
 
