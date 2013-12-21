@@ -93,7 +93,6 @@ endif
  set t_Co=256
  set number
  highlight LineNr term=bold	cterm=NONE ctermfg=Yellow ctermbg=DarkGray	gui=none guifg=Yellow	guibg=DarkGray
-
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 
 filetype plugin on
@@ -118,3 +117,5 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 
 let g:tex_flavor='latex'
+
+call libcallnr("vimtweak.dll", "SetAlpha", 200) " default is 255
