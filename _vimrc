@@ -73,6 +73,7 @@ endif
  " This is myselt Bundle plugins
  Bundle 'mattn/emmet-vim'
  Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+ Bundle 'vim-scripts/FencView.vim'
 
 
 
@@ -92,7 +93,8 @@ endif
  
  set t_Co=256
  set number
- highlight LineNr term=bold	cterm=NONE ctermfg=Yellow ctermbg=DarkGray	gui=none guifg=Yellow	guibg=DarkGray
+ colorscheme ir_black
+ "highlight LineNr term=bold	cterm=NONE ctermfg=Yellow ctermbg=DarkGray	gui=none guifg=Yellow	guibg=DarkGray
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 
 filetype plugin on
